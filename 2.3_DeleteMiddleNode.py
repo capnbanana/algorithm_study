@@ -10,21 +10,60 @@ class Node:
         self.data = data
         self.next = next
 
-def init_list():
-    global node1, node2, node3, node4
-    node1 = Node(1)
-    node2 = Node(2)
-    node3 = Node(3.33333)
-    node4 = Node('four')
-    node1.next = node2
-    node2.next = node3
-    node3.next = node4
 
-def Main():
-    init_list()
-    node = node1
+def init_list(lst):
+    nodelist = []
+    for i in lst:
+        node = Node(i)
+        nodelist.append(node)
+    for j in range(len(nodelist)):
+        if j+1 < len(nodelist):
+            nodelist[j].next = nodelist[j+1]
+
+    return nodelist
+
+def deleteMiddleNode(lst):
+    nodelist = init_list(lst)
+    MiddleNum = len(lst) / 2
+    MiddleNum = int(MiddleNum)
+    nodelist[MiddleNum-1].next = nodelist[MiddleNum+1]
+    return nodelist
+
+def printResult(lst):
+    finalList = deleteMiddleNode(lst)
+    node = finalList[0]
     while node:
-        print (node.data)
+        print(node.data)
         node = node.next
 
-Main()
+lst = ['a','b','c','d','e']
+lst2 =  [1,2,3,4,5,6,7]
+
+
+printResult(lst)
+printResult(lst2)
+
+
+# def init_list():
+#     global node1, node2, node3, node4, node5
+#     node1 = Node('a')
+#     node2 = Node('b')
+#     node3 = Node('c')
+#     node4 = Node('d')
+#     node5 = Node('e')
+#     node1.next = node2
+#     node2.next = node3
+#     node3.next = node4
+#     node4.next = node5
+#
+# def Main():
+#     init_list()
+#     node = node1
+#     while node:
+#         print (node.data)
+#         node = node.next
+#
+# def deleteMiddleNode():
+#     Main()
+#
+# Main()
