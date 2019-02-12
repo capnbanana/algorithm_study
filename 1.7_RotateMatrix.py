@@ -4,24 +4,14 @@
 # 행렬을 추가로 사용하지 않고서도 할 수 있겠는가?
 
 
-
 def rotate_matrix(matrix):
-    '''rotates a matrix 90 degrees clockwise'''
     n = len(matrix)
     print(n)
 
 
-data = [[1,2,3,4,5],
-        [6,7,8,9,10],
-        [11,12,13,14,15],
-        [16,17,18,19,20],
-        [21,22,23,24,25]]
 
+a = [[1,2,3],[4,5,6],[7,8,9]]
 
-def test(data):
-    for i in data:
-        print ('>>>> ', i)
+b = [[7,4,1],[8,5,2],[9,6,3]]
 
-test(data)
-
-
+rotate_matrix(a)
