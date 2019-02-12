@@ -39,14 +39,20 @@ class ThreeInOne():
         for k in range(self.num1 + self.num2, self.num1 + self.num2 + self.num3):
             self.stack3.push(arr[k])
 
-        print(self.stack1.get_stack(), self.stack2.get_stack(), self.stack3.get_stack())
+        # print(self.stack1.get_stack(), self.stack2.get_stack(), self.stack3.get_stack())
+
+        return self.stack1, self.stack2, self.stack3
 
 
 
-arr = list(range(1,20))
 
-s = ThreeInOne(arr, 3, 4, 10)
+arr = list(range(1,21))
 
-s.divideIntoThree()
+s = ThreeInOne(arr, 3, 4, 13)
 
+stack1, stack2, stack3 = s.divideIntoThree()
+
+print(stack1.get_stack())
+print(stack2.get_stack())
+print(stack3.get_stack())
 
